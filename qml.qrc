@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>logo.png</file>
+        <file>logo_hover.png</file>
+        <file>minimize.png</file>
+        <file>minimize_hover.png</file>
+        <file>exit.png</file>
+        <file>exit_hover.png</file>
+        <file>maximize.png</file>
+        <file>maximize_hover.png</file>
+    </qresource>
+</RCC>
