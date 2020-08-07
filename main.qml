@@ -36,13 +36,13 @@ Window {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.left: parent.left; anchors.leftMargin: 25
             fillMode: Image.PreserveAspectFit
-            source: "logo.png"
+            source: "images/logo.png"
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: handlerImage.source = "logo_hover.png"
-                onExited: handlerImage.source = "logo.png"
+                onEntered: handlerImage.source = "images/logo_hover.png"
+                onExited: handlerImage.source = "images/logo.png"
             }
         }
 
@@ -65,14 +65,14 @@ Window {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.right: maximizeImage.left; anchors.rightMargin: 10
 
-            source: "minimize.png"
+            source: "images/minimize.png"
             fillMode: Image.PreserveAspectFit
             sourceSize.height: 300; sourceSize.width: 300
 
             MouseArea {
                 anchors.fill: parent; hoverEnabled: true
-                onEntered: minimizeImage.source = "minimize_hover.png"
-                onExited: minimizeImage.source = "minimize.png"
+                onEntered: minimizeImage.source = "images/minimize_hover.png"
+                onExited: minimizeImage.source = "images/minimize.png"
                 onClicked: window.showMinimized()
             }
         }
@@ -84,15 +84,15 @@ Window {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.right: exitImage.left; anchors.rightMargin: 10
 
-            source: "maximize.png"
+            source: "images/maximize.png"
             fillMode: Image.PreserveAspectFit
             sourceSize.height: 300; sourceSize.width: 300
 
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: maximizeImage.source = "maximize_hover.png"
-                onExited: maximizeImage.source = "maximize.png"
+                onEntered: maximizeImage.source = "images/maximize_hover.png"
+                onExited: maximizeImage.source = "images/maximize.png"
                 onClicked: window.showMaximized()
             }
         }
@@ -105,18 +105,18 @@ Window {
             anchors.right: parent.right; anchors.rightMargin: 10
             sourceSize.height: 300; sourceSize.width: 300
             fillMode: Image.PreserveAspectFit
-            source: "exit.png"
+            source: "images/exit.png"
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: exitImage.source = "exit_hover.png"
-                onExited: exitImage.source = "exit.png"
+                onEntered: exitImage.source = "images/exit_hover.png"
+                onExited: exitImage.source = "images/exit.png"
                 onClicked: Qt.quit()
             }
         }
 
-
         MouseArea {
+            id: handlerMouseArea
             z: -1
             anchors.fill: parent
 
