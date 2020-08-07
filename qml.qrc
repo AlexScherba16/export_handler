@@ -9,5 +9,6 @@
         <file>images/maximize_hover.png</file>
         <file>images/minimize.png</file>
         <file>images/minimize_hover.png</file>
+        <file>handlerItem/HandlerItem.qml</file>
     </qresource>
 </RCC>
