@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.12
 
 import "handlerItem" as WindowHandler
+import "menuItem" as WindowMenu
 
 
 Window {
@@ -19,11 +20,20 @@ Window {
     property int previousX
     property int previousY
 
+    Column{
+        WindowHandler.HandlerItem{
+            id: windowHandlerId
+            width: window.width
+        }
 
-    WindowHandler.HandlerItem{
-        id: windowHandler
-        width: parent.width
+        WindowMenu.MenuItem{
+            id: windowMenuId
+            width: window.width
+
+        }
     }
+
+
 
     // resize handler
     MouseArea {

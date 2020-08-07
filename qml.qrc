@@ -10,5 +10,6 @@
         <file>images/minimize.png</file>
         <file>images/minimize_hover.png</file>
         <file>handlerItem/HandlerItem.qml</file>
+        <file>menuItem/MenuItem.qml</file>
     </qresource>
 </RCC>
