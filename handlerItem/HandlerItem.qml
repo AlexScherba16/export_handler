@@ -1,12 +1,10 @@
 import QtQuick 2.15
+import QtQuick.Window 2.12
 
 Item {
     id: handlerId
     height: 40
     width: 815
-
-    property int minWidth: 40
-    property int minHeight: 400
 
     signal moveTo(int xPosition, int yPosition)
     signal setMax()
@@ -34,13 +32,13 @@ Item {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.left: parent.left; anchors.leftMargin: 25
             fillMode: Image.PreserveAspectFit
-            source: "images/logo.png"
+            source: "../images/logo.png"
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: handlerImage.source = "images/logo_hover.png"
-                onExited: handlerImage.source = "images/logo.png"
+                onEntered: handlerImage.source = "../images/logo_hover.png"
+                onExited: handlerImage.source = "../images/logo.png"
             }
         }
 
@@ -63,14 +61,14 @@ Item {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.right: maximizeImage.left; anchors.rightMargin: 10
 
-            source: "images/minimize.png"
+            source: "../images/minimize.png"
             fillMode: Image.PreserveAspectFit
             sourceSize.height: 300; sourceSize.width: 300
 
             MouseArea {
                 anchors.fill: parent; hoverEnabled: true
-                onEntered: minimizeImage.source = "images/minimize_hover.png"
-                onExited: minimizeImage.source = "images/minimize.png"
+                onEntered: minimizeImage.source = "../images/minimize_hover.png"
+                onExited: minimizeImage.source = "../images/minimize.png"
                 onClicked: window.showMinimized()
             }
         }
@@ -82,15 +80,15 @@ Item {
             anchors.bottom: parent.bottom; anchors.bottomMargin: 5
             anchors.right: exitImage.left; anchors.rightMargin: 10
 
-            source: "images/maximize.png"
+            source: "../images/maximize.png"
             fillMode: Image.PreserveAspectFit
             sourceSize.height: 300; sourceSize.width: 300
 
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: maximizeImage.source = "images/maximize_hover.png"
-                onExited: maximizeImage.source = "images/maximize.png"
+                onEntered: maximizeImage.source = "../images/maximize_hover.png"
+                onExited: maximizeImage.source = "../images/maximize.png"
                 onClicked: window.showMaximized()
             }
         }
@@ -103,12 +101,12 @@ Item {
             anchors.right: parent.right; anchors.rightMargin: 10
             sourceSize.height: 300; sourceSize.width: 300
             fillMode: Image.PreserveAspectFit
-            source: "images/exit.png"
+            source: "../images/exit.png"
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: exitImage.source = "images/exit_hover.png"
-                onExited: exitImage.source = "images/exit.png"
+                onEntered: exitImage.source = "../images/exit_hover.png"
+                onExited: exitImage.source = "../images/exit.png"
                 onClicked: Qt.quit()
             }
         }
