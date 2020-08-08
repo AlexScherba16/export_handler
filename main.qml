@@ -1,6 +1,8 @@
 import QtQuick 2.14
 import QtQuick.Window 2.12
 
+import io.ics.backend 1.0
+
 import "handlerItem" as WindowHandler
 import "menuItem" as WindowMenu
 
@@ -33,6 +35,12 @@ Window {
             width: window.width
         }
     }
+
+    Backend{
+        id: cppBackend
+    }
+
+
 
     // resize handler
     MouseArea {
