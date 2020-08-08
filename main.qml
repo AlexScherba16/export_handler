@@ -80,5 +80,9 @@ Window {
             window.setHeight(newHeigh)
         }
     }
+
+    function enableChildItems(itemsState){
+        windowHandlerId.enabled = itemsState
+    }
 }
 

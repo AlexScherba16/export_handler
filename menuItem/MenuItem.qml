@@ -30,6 +30,7 @@ Item {
                     }
 
                     console.log("[MenuItem] invoke hdd searching")
+                    window.enableChildItems(false)
                     cppBackend.searchConnectedDevises()
                 }
             }

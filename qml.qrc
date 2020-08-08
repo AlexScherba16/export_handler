@@ -12,5 +12,9 @@
         <file>handlerItem/HandlerItem.qml</file>
         <file>menuItem/MenuItem.qml</file>
         <file>menuItem/buttons/SearchButton.qml</file>
+        <file>images/exit_disabled.png</file>
+        <file>images/logo_disabled.png</file>
+        <file>images/minimize_disabled.png</file>
+        <file>images/maximize_disabled.png</file>
     </qresource>
 </RCC>

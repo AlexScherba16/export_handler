@@ -15,11 +15,9 @@ Item {
         id: handlerBase
         radius: 3
         anchors.fill: parent
-        gradient: Gradient {
-            orientation: Gradient.Horizontal
-            GradientStop { position: 0; color: "#1e2d4b"}
-            GradientStop { position: 1; color: "#323e70"}
-        }
+        gradient: enabledGradient
+
+        onEnabledChanged: gradient = disabledGradient
 
         Image {
             id: handlerImage
@@ -36,6 +34,7 @@ Item {
                 onEntered: handlerImage.source = "../images/logo_hover.png"
                 onExited: handlerImage.source = "../images/logo.png"
             }
+            onEnabledChanged: handlerImage.source = "../images/logo_disabled.png"
         }
 
         Text {
@@ -48,6 +47,7 @@ Item {
             font.family: "Roboto"
             verticalAlignment: Text.AlignVCenter; horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 16
+            onEnabledChanged: {color = "#545454"}
         }
 
         Image {
@@ -67,6 +67,7 @@ Item {
                 onExited: minimizeImage.source = "../images/minimize.png"
                 onClicked: window.showMinimized()
             }
+            onEnabledChanged: minimizeImage.source = "../images/minimize_disabled.png"
         }
 
         Image {
@@ -87,6 +88,7 @@ Item {
                 onExited: maximizeImage.source = "../images/maximize.png"
                 onClicked: window.showMaximized()
             }
+            onEnabledChanged: maximizeImage.source = "../images/maximize_disabled.png"
         }
 
         Image {
@@ -105,6 +107,7 @@ Item {
                 onExited: exitImage.source = "../images/exit.png"
                 onClicked: Qt.quit()
             }
+            onEnabledChanged: exitImage.source = "../images/exit_disabled.png"
         }
 
         MouseArea {
@@ -128,20 +131,30 @@ Item {
             }
 
             onDoubleClicked: {
-                console.log("DOUBLE_CLICK ", window.visibility)
                 switch(window.visibility){
                     case Window.Windowed:
-                        console.log("MAXIMIZED___");
                         window.showMaximized();
                         break;
 
                     case Window.Maximized:
-                        console.log("MINIMIZED___");
                         window.showNormal();
                         break;
                 }
             }
         }
-    }
 
+        Gradient {
+            id: enabledGradient
+            orientation: Gradient.Horizontal
+            GradientStop { position: 0; color: "#1e2d4b"}
+            GradientStop { position: 1; color: "#323e70"}
+        }
+        Gradient {
+            id: disabledGradient
+            orientation: Gradient.Horizontal
+            GradientStop { position: 0; color: "#DBDBDB"}
+            GradientStop { position: 1; color: "#DBDBDB"}
+        }
+
+    }
 }
