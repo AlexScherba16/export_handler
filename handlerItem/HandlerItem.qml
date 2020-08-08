@@ -17,7 +17,9 @@ Item {
         anchors.fill: parent
         gradient: enabledGradient
 
-        onEnabledChanged: gradient = disabledGradient
+        onEnabledChanged:
+            gradient = handlerBase.enabled
+            ? enabledGradient : disabledGradient
 
         Image {
             id: handlerImage
@@ -34,7 +36,11 @@ Item {
                 onEntered: handlerImage.source = "../images/logo_hover.png"
                 onExited: handlerImage.source = "../images/logo.png"
             }
-            onEnabledChanged: handlerImage.source = "../images/logo_disabled.png"
+            onEnabledChanged: {
+                handlerImage.source = handlerImage.enabled
+                        ? "../images/logo.png"
+                        : "../images/logo_disabled.png"
+            }
         }
 
         Text {
@@ -47,7 +53,8 @@ Item {
             font.family: "Roboto"
             verticalAlignment: Text.AlignVCenter; horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 16
-            onEnabledChanged: {color = "#545454"}
+            onEnabledChanged: color = handlerText.enabled
+                              ? "#ffffff" : "#545454"
         }
 
         Image {
@@ -67,7 +74,11 @@ Item {
                 onExited: minimizeImage.source = "../images/minimize.png"
                 onClicked: window.showMinimized()
             }
-            onEnabledChanged: minimizeImage.source = "../images/minimize_disabled.png"
+            onEnabledChanged: {
+                minimizeImage.source = minimizeImage.enabled
+                        ? "../images/minimize.png"
+                        : "../images/minimize_disabled.png"
+            }
         }
 
         Image {
@@ -88,7 +99,11 @@ Item {
                 onExited: maximizeImage.source = "../images/maximize.png"
                 onClicked: window.showMaximized()
             }
-            onEnabledChanged: maximizeImage.source = "../images/maximize_disabled.png"
+            onEnabledChanged: {
+                maximizeImage.source = maximizeImage.enabled
+                        ? "../images/maximize.png"
+                        : "../images/maximize_disabled.png"
+            }
         }
 
         Image {
@@ -107,7 +122,11 @@ Item {
                 onExited: exitImage.source = "../images/exit.png"
                 onClicked: Qt.quit()
             }
-            onEnabledChanged: exitImage.source = "../images/exit_disabled.png"
+            onEnabledChanged: {
+                exitImage.source = exitImage.enabled
+                        ? "../images/exit.png"
+                        : "../images/exit_disabled.png"
+            }
         }
 
         MouseArea {
@@ -155,6 +174,5 @@ Item {
             GradientStop { position: 0; color: "#DBDBDB"}
             GradientStop { position: 1; color: "#DBDBDB"}
         }
-
     }
 }
