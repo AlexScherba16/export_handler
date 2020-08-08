@@ -24,7 +24,13 @@ Item {
                 anchors.top: menuRow.top; anchors.topMargin: 24
 
                 onSearchHdd: {
+                    if(cppBackend == null){
+                        console.error("[MenuItem] cppBackend == null")
+                        return;
+                    }
+
                     console.log("[MenuItem] invoke hdd searching")
+                    cppBackend.searchConnectedDevises()
                 }
             }
         }
