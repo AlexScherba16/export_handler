@@ -58,5 +58,7 @@ Button{
                 searchButton.searchHdd()
             }
         }
+        onEnabledChanged:
+            color = enabled ? "#FFFFFF" : "#DBDBDB"
     }
 }

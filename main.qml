@@ -86,6 +86,7 @@ Window {
     }
     function enableChildItems(itemsState){
         windowHandlerId.enabled = itemsState
+        windowMenuId.enabled = itemsState
     }
 }
 

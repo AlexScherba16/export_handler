@@ -35,5 +35,7 @@ Item {
                 }
             }
         }
+        onEnabledChanged:
+            color = enabled ? "#FFFFFF" : "#DBDBDB"
     }
 }
