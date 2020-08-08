@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    qmlRegisterType<Backend>("io.ics.backend", 1, 0, "Backend");
+
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

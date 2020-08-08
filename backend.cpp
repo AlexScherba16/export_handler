@@ -3,5 +3,10 @@
 
 Backend::Backend(QObject *parent) : QObject(parent)
 {
-    qDebug() << "[Backend] Constructor " << endl;
+    qDebug() << "[Backend] Constructor";
+}
+
+Backend::~Backend()
+{
+    qDebug() << "[Backend] Desctructor";
 }
