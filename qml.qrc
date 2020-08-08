@@ -11,5 +11,6 @@
         <file>images/minimize_hover.png</file>
         <file>handlerItem/HandlerItem.qml</file>
         <file>menuItem/MenuItem.qml</file>
+        <file>menuItem/buttons/SearchButton.qml</file>
     </qresource>
 </RCC>

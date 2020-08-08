@@ -13,7 +13,6 @@ Item {
 
     Rectangle {
         id: handlerBase
-        height: 40
         radius: 3
         anchors.fill: parent
         gradient: Gradient {
@@ -21,9 +20,6 @@ Item {
             GradientStop { position: 0; color: "#1e2d4b"}
             GradientStop { position: 1; color: "#323e70"}
         }
-        anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.left: parent.left
 
         Image {
             id: handlerImage
