@@ -18,10 +18,14 @@ Item {
 
         Row{
             id: menuRow
+            leftPadding: 24
             Buttons.SearchButton{
                 id: searchHddButton
-                anchors.top: parent.top; anchors.topMargin: 24
-                anchors.left: parent.left; anchors.leftMargin: 24
+                anchors.top: menuRow.top; anchors.topMargin: 24
+
+                onSearchHdd: {
+                    console.log("[MenuItem] invoke hdd searching")
+                }
             }
         }
     }
