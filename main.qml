@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick 2.14
 import QtQuick.Window 2.12
 
 import "handlerItem" as WindowHandler
@@ -10,6 +10,7 @@ Window {
     visible: true
     width: 815
     minimumWidth: 400
+    minimumHeight: 400
     height: 400
 
     title: qsTr("Hello World")
@@ -21,6 +22,7 @@ Window {
     property int previousY
 
     Column{
+        id: column
         WindowHandler.HandlerItem{
             id: windowHandlerId
             width: window.width
@@ -29,11 +31,8 @@ Window {
         WindowMenu.MenuItem{
             id: windowMenuId
             width: window.width
-
         }
     }
-
-
 
     // resize handler
     MouseArea {
@@ -47,12 +46,15 @@ Window {
         cursorShape: Qt.SizeHorCursor
         onPressed: previousX = mouseX
         onMouseXChanged: {
-            var dx = mouseX - previousX
-            window.setWidth(parent.width + dx)
+            var neWidth = parent.width + mouseX - previousX
+            if (neWidth <= window.minimumWidth)
+                neWidth = window.minimumWidth
+            window.setWidth(neWidth)
         }
     }
 
     MouseArea {
+        id: leftSide
         height: 5
         anchors {
             top: parent.top
@@ -64,7 +66,10 @@ Window {
         onMouseYChanged: {
             var dy = mouseY - previousY
             window.setY(window.y + dy)
-            window.setHeight(window.height - dy)
+            var newHeigh = window.height - dy
+            if(newHeigh <= window.minimumHeight)
+                 newHeigh = window.minimumHeight
+            window.setHeight(newHeigh)
         }
     }
 }
