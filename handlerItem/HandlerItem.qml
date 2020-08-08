@@ -128,9 +128,17 @@ Item {
             }
 
             onDoubleClicked: {
+                console.log("DOUBLE_CLICK ", window.visibility)
                 switch(window.visibility){
-                    case Window.Windowed: window.showMaximized(); break;
-                    case Window.Maximized: window.showNormal(); break;
+                    case Window.Windowed:
+                        console.log("MAXIMIZED___");
+                        window.showMaximized();
+                        break;
+
+                    case Window.Maximized:
+                        console.log("MINIMIZED___");
+                        window.showNormal();
+                        break;
                 }
             }
         }
